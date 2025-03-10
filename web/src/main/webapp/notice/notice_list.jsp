@@ -3,6 +3,22 @@
     pageEncoding="UTF-8"%>
 <%
 ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>)request.getAttribute("result");
+
+//페이지 번호 생성
+/*
+1.한 페이지당 몇개씩 데이터를 출력할 것인지를 설정한다.
+2.데이터베이스에 있는 데이터의 총 개수 / 한 페이지당 개수 (소수점)
+3.Math.ceil 사용하는 이유는 1.1, 1.6 등등을 -> 반올림으로 페이지가 추가되도록 한다.
+*/
+String total_page = notice.get(0).get(5);
+
+int pg = 1;
+if(total_page != null || !total_page.equals("")){
+	//pg = (int)Math.ceil((double)Integer.parseInt(total_page) / 3);
+	float pg2 = Integer.parseInt(total_page) / 3f;
+	pg = (int)Math.ceil(pg2);
+out.println(pg);
+}
 %>
 <!-- view -->
 <!DOCTYPE html>
@@ -12,7 +28,7 @@ ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>)request.getA
 <title>공지사항 리스트</title>
 </head>
 <body>
-<p>현재 등록된 게시물 : <%=notice.size()%></p>
+<p>현재 등록된 게시물 : <%=notice.get(0).get(5)%></p>
 <table border="1" cellpadding="0" cellspacing="0">
 <thead>
 	<tr>
@@ -41,9 +57,21 @@ ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>)request.getA
 	}
 %>
 </tbody>
-
 </table>
-
+<br><br><br>
+<table border="1">
+<tr>
+<%
+	int w = 1;
+	while(w <= pg){
+%>
+<td width=20 height=20 align="center"><a href="./notice_list.do?pageno=<%=w %>"><%=w %></a></td>
+<%
+w++;
+}
+%>
+</tr>
+</table>
 </body>
 <script>
 function notice_view(no){
