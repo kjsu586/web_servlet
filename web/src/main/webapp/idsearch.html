@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디 찾기</title>
+<style>
+.btn {
+   width: 100px;
+   height: 40px;
+   position: absolute;
+   top: 90px;
+   background-color: black;
+   color: white;
+}
+</style>
+</head>
+<body>
+<!-- 
+required(submit) : HTML5 전용 무조건 필수로 값을 받는 속성 / 이걸 넣어야 전송이 됨 
+patterm : 정규식 코드 형태로 규칙적인 데이터를 입력하도록 설정하는 속성 / {},(),[]
+\d(숫자), \D(문자) 로 입력값의 범위를 설정할 수 있음
+\b(단어)
+ -->
+ <!--  
+ <form id="frm" method="post" action="./idsearch.do">
+고객명 : <input type="text" name="name" required><br>
+연락처 : <input type="tel" pattern="(010/011)\d{3,4}\d{4}" name="tel" required> &nbsp "-" 미포함 숫자만 입력하세요<br>
+이메일 : <input type="email" name="email" pattern="[a-zA-z09._+@" required><br>
+<input type="submit" value="아이디 찾기">
+</form>
+ -->
+<form id="frm" method="post" action="./idsearch.do">
+고객명 : <input type="text" name="name"><br>
+연락처 : <input type="tel" name="tel"> &nbsp "-" 미포함 숫자만 입력하세요<br>
+이메일 : <input type="email" name="email"><br>
+<input type="button" value="아이디 찾기" onclick="search()" class="btn">
+</form>
+</body>
+<script>
+function search() {
+	if(frm.name.value==""){
+		alert("이름을 입력해 주세요")
+		frm.name.focus();
+		frm.name.value = "";
+	}
+	else if(frm.tel.value==""){
+		alert("전화번호를 입력해 주세요")
+		frm.tel.focus();
+		frm.tel.value = "";
+	}
+	else if(frm.email.value==""){
+		alert("이메일을 입력해 주세요")
+		frm.email.focus();
+		frm.email.value = "";
+	}
+	else {
+			frm.submit();			
+		}
+		
+}
+</script>
+</html>

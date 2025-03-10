@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>web</display-name>
+  <!--
+  <servlet-name> : 가상의 이름이며, 동일한 이름 사용 x
+  <servlet-class> : package + java 클래스명
+  url-pattern : 해당 java 파일을 WEB에서 가상의 경로로 사용할 수 있도록 실행
+    -->
+  <servlet>
+   <servlet-name>loginok</servlet-name>
+   <servlet-class>web.login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginok</servlet-name>
+  	<url-pattern>/loginok.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>payok</servlet-name>
+   	<servlet-class>web.payok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>payok</servlet-name>
+  	<url-pattern>/payok.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>idsearch</servlet-name>
+   	<servlet-class>web.idsearch</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>idsearch</servlet-name>
+  	<url-pattern>/idsearch.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+    
+  <servlet>
+  	<servlet-name>pollok</servlet-name>
+   	<servlet-class>web.pollok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>pollok</servlet-name>
+  	<url-pattern>/pollok.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+   
+   <servlet>
+  	<servlet-name>upload</servlet-name>
+   	<servlet-class>web.fileupload</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>upload</servlet-name>
+  	<url-pattern>/fileupload.do</url-pattern>
+  </servlet-mapping>
+   
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>multifile</servlet-name>
+  	<servlet-class>web.multi_file</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>multifile</servlet-name>
+  	<url-pattern>/multi_file.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>agreeok</servlet-name>
+  	<servlet-class>web.agreeok</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>agreeok</servlet-name>
+  	<url-pattern>/agreeok.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>part2</servlet-name>
+  	<servlet-class>web.part2</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>part2</servlet-name>
+  	<url-pattern>/part2.do</url-pattern>
+   </servlet-mapping>
+   
+  <!-- /////////////////////////////////////////////////////////////////////// --> 
+  
+  <servlet>
+  	<servlet-name>part3</servlet-name>
+  	<servlet-class>web.part3</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>part3</servlet-name>
+  	<url-pattern>/part3.do</url-pattern>
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>encry</servlet-name>
+  	<servlet-class>web.encry</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>encry</servlet-name>
+  	<url-pattern>/encry.do</url-pattern>
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->  
+  
+   <servlet>
+  	<servlet-name>deliveryok</servlet-name>
+  	<servlet-class>web.deliveryok</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>deliveryok</servlet-name>
+  	<url-pattern>/deliveryok.do</url-pattern>
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <!-- admin이라는 실제 디렉토리가 생성되었을 경우 package에도 admin을 생성 -->
+  <servlet>
+  	<servlet-name>adminok</servlet-name>
+  	<servlet-class>admin.adminok</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>adminok</servlet-name>
+  	<url-pattern>/admin/adminok.do</url-pattern> <!-- Front경로에 맞춤 -->
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+   <servlet>
+  	<servlet-name>mobileok</servlet-name>
+  	<servlet-class>admin.mobileok</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>mobileok</servlet-name>
+  	<url-pattern>/admin/mobileok.do</url-pattern> <!-- Front경로에 맞춤 -->
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+  <servlet>
+  	<servlet-name>main</servlet-name>
+  	<servlet-class>admin.main</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>main</servlet-name>
+  	<url-pattern>/admin/main.do</url-pattern> <!-- Front경로에 맞춤 -->
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+   <servlet>
+  	<servlet-name>movie</servlet-name>
+  	<servlet-class>admin.movie</servlet-class>
+  </servlet>
+   
+   <servlet-mapping>
+   	<servlet-name>movie</servlet-name>
+  	<url-pattern>/admin/movie.do</url-pattern> <!-- Front경로에 맞춤 -->
+   </servlet-mapping>
+  
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+  
+</web-app>
+<!-- servlet 추가시켰을 경우 -> 서버 재시작해라  -->
+
+<!--  
+ Servlet 정의 
+<servlet>
+     servlet-name: Servlet을 식별하는 이름입니다. 
+     나중에 <servlet-mapping>에서 이 이름을 사용해서 URL 패턴을 연결합니다. 
+     
+    <servlet-name>fileupload</servlet-name>
+
+    servlet-class: 실제로 실행될 Servlet 클래스의 경로를 지정합니다. 
+    여기서는 'web.FileUploadServlet'이라는 클래스가 실행됩니다. 
+    
+    <servlet-class>web.FileUploadServlet</servlet-class>
+</servlet>
+
+ Servlet URL 매핑 
+<servlet-mapping>
+     servlet-name: 위에서 정의한 Servlet의 이름과 일치해야 합니다. 
+     이 이름을 통해 <servlet>과 <servlet-mapping>을 연결합니다. 
+     
+    <servlet-name>fileupload</servlet-name>
+
+     url-pattern: 클라이언트가 요청할 URL 패턴을 지정합니다.
+      'fileupload.do'로 요청이 오면, 이 Servlet이 실행됩니다.
+       
+    <url-pattern>/fileupload.do</url-pattern>
+</servlet-mapping>
+-->
+
+
+
+
+
+
+
+

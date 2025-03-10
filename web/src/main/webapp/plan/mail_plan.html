@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기획 프로젝트</title>
+<style>
+.btn{
+background-color: black;
+color: white;
+margin-left: 110px;
+}
+.box1{
+width: 300px;
+height: 30px;
+}
+.box2{
+width: 300px;
+height: 400px;
+}
+</style>
+</head>
+<body>
+<form id="frm" method="post" action="./mailok.do">
+<div><input type="text" class="box1" name="to_name" placeholder="담당자 성함을 입력하세요"></div><br>
+<div><input type="text" class="box1" name="to_mail" placeholder="회신받을 메일주소를 입력하세요"></div><br>
+<div><input type="text" class="box1" name="subject" placeholder="제목을 입력하세요"></div><br>
+<div><textarea class="box2" name="context" placeholder="내용을 입력하세요"></textarea></div><br>
+<input type="button" value="메일전송" class="btn" onclick="mail_send()">
+</form>
+</body>
+<script src="./mail_plan.js?v=1"></script>
+</html>

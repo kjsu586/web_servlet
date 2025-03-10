@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- 
+Javascript : 4.0 -> PC / 아이폰이 나오면서 Mobile(X) / 변수 var만 있음
+function 만 존재
+
+ECMAscript(es) : 1997년에 나옴 Javascript Update 버전 -> let(변수,동일 변수명x), const(상수)
+var aa = function() 추가, class 추가
+
+ES5 -> Javascript 5.0 -> Jquery(X) -> APP -> ES6
+
+Angular(이제 잘 안씀), React(얘는 6번까지밖에 못씀 그래서 Redux를 내놨는데 새로 공뷰해야돼서 안씀),
+Vue(ECMA랑 협업) -> ECMA2024
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 글쓰기</title>
+</head>
+<body>
+<!-- enctype="multipart/form-data" 이거 써야지 첨부파일 넣을 수 있음 -->
+<form id="frm" method="post" action="./noticeok.do">
+<!-- hidden : Front & Backend가 서로 약속된 데이터를 이관 받는 속성 -->
+<input type="hidden" name="se" value="korea.com">
+제목 : <input type="text" name="subject"><br>
+글쓴이 : <input type="text" name="writer"><br>
+내용 : <textarea name="wtext" style="width:500px; height:300px"></textarea>
+<br>
+<input type="button" value="글 등록" onclick="notice_writer()">
+</form>
+</body>
+<script src="./notice.js?v=2"></script>
+</html>
