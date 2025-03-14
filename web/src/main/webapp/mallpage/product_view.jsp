@@ -11,9 +11,9 @@ function errmsg(){
 <%
 	//DTO 모델을 컨트롤러에서 받을 값을 이관시켜서 해당 메소드로 값을 출력하기 위한 형식
 	dto_product pd = (dto_product)request.getAttribute("dto");
-	if(pd.getMidx() == 0){
-		out.print("<script>errmsg();</script>");
-	}
+	//if(pd.getMidx() == 0){
+	//	out.print("<script>errmsg();</script>");
+	//}
 %>
 <!DOCTYPE html>
 <html>
