@@ -15,7 +15,7 @@
 </section>
 <footer>
 <jsp:include page="./copyright.jsp"/>
-<!--  <%@include file="./copyright.jsp" %> -->
+<%--  <%@include file="./copyright.jsp" --%>
 </footer>
 
 </body>

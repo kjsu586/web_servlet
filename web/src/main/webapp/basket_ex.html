@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>장바구니</title>
+</head>
+<body>
+<form id="frm" method="get" action="http://172.30.1.88:8080/web/paylist.do">
+<p>장바구니</p>
+
+<label>
+    <input type="checkbox" name="basket" value="프리즘코리아 CP55G5" onclick="bs_check()"> 프리즘코리아 CP55G5
+    <span>399000원</span>
+    <input type="hidden" value="399000" name="price">
+</label>
+<br>
+
+<label>
+    <input type="checkbox" name="basket" value="삼성전자 QLED KQ85" onclick="bs_check()"> 삼성전자 QLED KQ85
+    <span>2192810원</span>
+    <input type="hidden" value="2192810" name="price">
+</label>
+<br>
+
+<label>
+    <input type="checkbox" name="basket" value="LG전자 올레드 evo" onclick="bs_check()"> LG전자 올레드 evo
+    <span>2732230원</span>
+    <input type="hidden" value="2732230" name="price">
+</label>
+<br>
+
+<label>
+    <input type="checkbox" name="basket" value="이스트라 스마트 TV" onclick="bs_check()"> 이스트라 스마트 TV
+    <span>359000원</span>
+    <input type="hidden" value="359000" name="price">
+</label>
+<br>
+
+<label>
+    <input type="checkbox" name="basket" value="LG전자 울트라 HD" onclick="bs_check()"> LG전자 울트라 HD
+    <span>790000원</span>
+    <input type="hidden" value="790000" name="price">
+</label>
+<br>
+
+<!-- 최종 결제 금액 -->
+<div>최종 결제 금액 : <input type="text" name="total" readonly="readonly"> 원</div>
+<br>
+
+<!-- 결제 버튼 -->
+<input type="button" value="결제하기" onclick="go_shopping()">
+</form>
+
+<script>
+var price = document.getElementsByName("price");
+var bs = document.getElementsByName("basket");
+var totalprice = document.getElementsByName("total")[0];
+
+function bs_check(){
+    var w = 0;
+    var total = 0;
+
+    while(w < bs.length){
+        if(bs[w].checked){
+            total += parseInt(price[w].value);
+        }
+        w++;
+    }
+
+    totalprice.value = total;
+}
+
+var go_shopping = function(){
+    if ([...bs].some(b => b.checked)) {        
+        frm.submit();
+    } else {
+        alert("결제할 금액이 없습니다.");
+    }    
+}
+</script>
+</body>
+</html>
